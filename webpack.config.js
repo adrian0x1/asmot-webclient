@@ -38,43 +38,32 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true,
+                            modules: false,
                         },
                     },
                 ],
             },
 
-            /* File Loader */
+            // Assets Loader
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[hash].[ext]',
-                            outputPath: 'images',
-                        },
-                    },
-                ],
+                test: /\.svg/,
+                type: 'asset/inline'
             },
 
-            /* URL Loader */
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
+                test: /\.(png|jpg|gif)$/i,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                            name: '[name].[hash].[ext]',
-                            outputPath: 'images',
-                        },
+                        }
                     },
                 ],
+
+                type: 'javascript/auto'
             },
         ],
-
-        //TODO: Maybe add the Image and SVG Loaders
 
     },
 
