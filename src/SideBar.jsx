@@ -5,12 +5,6 @@ import memImg from "./assets/memory.svg";
 import netImg from "./assets/network.svg";
 import sysImg from "./assets/pchorizontal.svg";
 
-
-
-
-
-
-
 export default function SideBar({ setView })
 {
     return (
